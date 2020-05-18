@@ -11,7 +11,7 @@ nanopore-parser-cli
     :alt: Dependabot Enabled
 
 
-A Client for running nanopore-parser. nanopore-parser-cli is designed to interoperate with current QBiC Server Infrastructure
+Client for running nanopore-parser. nanopore-parser-cli is designed to interoperate with current QBiC Server Infrastructure
 
 * Free software: MIT license
 * Documentation: https://nanopore-parser-cli.readthedocs.io.
