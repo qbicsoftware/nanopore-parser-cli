@@ -1,0 +1,14 @@
+domain: cli
+language: java
+project_name: nanopore-parser-cli
+project_slug: nanopore-parser-cli
+project_short_description: A Client for running nanopore-parser. nanopore-parser-cli
+  is designed to interoperate with current QBiC Server Infrastructure
+template_version: '1.0.0 # <<QUBE_NO_BUMP>>'
+template_handle: cli-java
+full_name: Steffen Greiner
+email: Steffen.Greiner@uni-tuebingen.de
+copyright_holder: QBiC
+github_username: Steffengreiner
+main_class_prefix: Nanopore
+version: 1.0.0-SNAPSHOT
