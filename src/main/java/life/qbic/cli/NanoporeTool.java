@@ -26,12 +26,16 @@ public class NanoporeTool extends QBiCTool<NanoporeCommand> {
     public void execute() {
         // get the parsed command-line arguments
         final NanoporeCommand command = super.getCommand();
-        LOG.debug("Starting Nanopore tool");
-        Map NanoporeOutputMap = runNanoporeParser(command.path);
-        System.out.println(NanoporeOutputMap);
-        LOG.debug("Ending Nanopore tool");
+        LOG.info("Executing NanoporeParser to validate Directory");
+        try {
+            Map NanoporeOutputMap = runNanoporeParser(command.path);
+            LOG.info("Validation process executed successfully");
+        } catch (Exception e) {
+            LOG.error(e.getMessage());
+        }
     }
     //ToDo Switch Map for NanoporeExperiment as soon as it works
+
     private Map runNanoporeParser(Path path) {
 
         Map nanoporeOutputMap = NanoporeParser.parseFileStructure(path);
