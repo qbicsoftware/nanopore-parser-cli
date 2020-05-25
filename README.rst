@@ -19,7 +19,9 @@ A Client for running nanopore-parser. nanopore-parser-cli is designed to interop
 Features
 --------
 
-* TODO
+This tool is responsible for validating a given filetree against the Nanopore filestructure at QBiC.
+Nanopore-parser-cli runs NanoporeParser from core-utils-lib(https://github.com/qbicsoftware/core-utils-lib),
+which converts the given filetree into Json Format and compares it with an established internal Json Schema.
 
 Credits
 -------
