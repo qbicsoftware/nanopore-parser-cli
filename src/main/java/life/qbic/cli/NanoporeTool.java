@@ -1,5 +1,9 @@
 package life.qbic.cli;
 
+import java.nio.file.Path;
+import java.util.Map;
+import life.qbic.datamodel.datasets.OxfordNanoporeExperiment;
+import life.qbic.utils.NanoporeParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,11 +27,17 @@ public class NanoporeTool extends QBiCTool<NanoporeCommand> {
     public void execute() {
         // get the parsed command-line arguments
         final NanoporeCommand command = super.getCommand();
-
-        // TODO: do something useful with the obtained command.
-        //
-
+        LOG.info("Executing NanoporeParser to validate Directory");
+        try {
+            OxfordNanoporeExperiment nanoporeOutputExperiment = runNanoporeParser(command.path);
+            LOG.info("Validation process executed successfully");
+        } catch (Exception e) {
+            LOG.error(e.getMessage());
+        }
     }
+    private OxfordNanoporeExperiment runNanoporeParser(Path path) {
 
-    // TODO: override the shutdown() method if you are implementing a daemon and want to take advantage of a shutdown hook for clean-up tasks
+        OxfordNanoporeExperiment nanoporeOutputExperiment = NanoporeParser.parseFileStructure(path);
+        return nanoporeOutputExperiment;
+    }
 }

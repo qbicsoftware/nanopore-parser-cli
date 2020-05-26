@@ -1,5 +1,6 @@
 package life.qbic.cli;
 
+import java.nio.file.Path;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
@@ -22,4 +23,6 @@ public class NanoporeCommand extends AbstractCommand {
     //
     //            If you need a custom constructor, make sure to provide a no-arguments public constructor as well.
     //            See: https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html
+    @Option(names={"-p", "--path"}, description="Path specifying Nanopore instrument output directory", required=true)
+    Path path;
 }
